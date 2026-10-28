@@ -34,3 +34,12 @@ Os botões abrem o WhatsApp com uma mensagem específica para cada serviço.
 Para editar: `remote-content.html` contém o conteúdo e
 `dist/assets/suporte-remoto.css` contém os estilos. Execute `python build-remote.py`
 após alterar o conteúdo para gerar `dist/suporte-remoto/index.html`.
+
+## SEO e advocacia
+
+A página `/suporte-para-advogados/` tem conteúdo próprio para PJe e certificado.
+Use `python build-seo.py` como comando final para gerar todas as páginas com
+metadados de produção, links internos, `sitemap.xml` e `robots.txt`.
+O domínio canônico é `https://topinfobh.com.br`. Consulte `PUBLICACAO-SEO.md`
+para publicar na hospedagem principal e solicitar indexação no Search Console.
+A prévia do Sites permanece privada e não é indexável pelo Google.
