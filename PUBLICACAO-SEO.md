@@ -13,6 +13,10 @@ o Google não consegue indexar páginas que exigem autenticação.
 - `sitemap.xml` com as três URLs canônicas e `robots.txt` permitindo rastreamento.
 - Arquivos HTML sem `noindex`, sem repetição artificial de palavras-chave.
 
+Atualização de idiomas: as três páginas também estão disponíveis em inglês,
+espanhol e árabe, totalizando 12 URLs no sitemap. Cada idioma tem canonical próprio
+e alternates `hreflang`, incluindo `pt-BR` e `x-default` na versão portuguesa.
+
 ## Publicar no servidor correto
 
 Não foram alterados o domínio, o DNS nem a instalação WordPress em produção.

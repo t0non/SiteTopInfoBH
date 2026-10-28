@@ -43,3 +43,16 @@ metadados de produção, links internos, `sitemap.xml` e `robots.txt`.
 O domínio canônico é `https://topinfobh.com.br`. Consulte `PUBLICACAO-SEO.md`
 para publicar na hospedagem principal e solicitar indexação no Search Console.
 A prévia do Sites permanece privada e não é indexável pelo Google.
+
+## Idiomas
+
+O seletor do cabeçalho oferece Português (Brasil), English (Estados Unidos),
+Español (Espanha) e العربية (Arábia Saudita). As traduções são páginas estáticas:
+`/en/`, `/es/` e `/ar/`, preservando a rota das páginas de serviços.
+O árabe usa `dir="rtl"` e estilos próprios para leitura da direita para a esquerda.
+
+As traduções estão em `translations.tsv` e `translations-extra.json`.
+`translation-source.json` associa os índices às frases originais em português.
+`build-languages.py` gera as 12 páginas e o sitemap multilíngue, com canonical
+próprio e hreflang recíproco. Ele é executado automaticamente por `build-seo.py`.
+As bandeiras locais em `dist/assets/flags/` foram obtidas de flagcdn.com.
