@@ -23,3 +23,14 @@ no servidor original. As fotos principais foram baixadas.
 
 Tags de rastreamento do Google Tag Manager e Hostinger foram removidas da cópia.
 Não há painel administrativo ou backend WordPress nesta versão.
+
+## Página de suporte remoto
+
+A landing page fica em `/suporte-remoto/`, com link no menu da página inicial.
+Inclui suporte a PJe e certificado digital, impressoras, armazenamento,
+desempenho, e-mail e conectividade, explicação do atendimento e perguntas frequentes.
+Os botões abrem o WhatsApp com uma mensagem específica para cada serviço.
+
+Para editar: `remote-content.html` contém o conteúdo e
+`dist/assets/suporte-remoto.css` contém os estilos. Execute `python build-remote.py`
+após alterar o conteúdo para gerar `dist/suporte-remoto/index.html`.
