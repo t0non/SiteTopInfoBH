@@ -8,7 +8,18 @@ import html, json, re
 ROOT = Path(__file__).parent
 DIST = ROOT / 'dist'
 ORIGIN = 'https://topinfobh.com.br'
-PATHS = ['/', '/suporte-remoto/', '/suporte-para-advogados/']
+PATHS = [
+    '/',
+    '/suporte-remoto/',
+    '/suporte-para-advogados/',
+    '/onde-atendemos/',
+    '/limpeza-de-virus/',
+    '/conserto-impressora/',
+    '/computador-lento/',
+    '/configuracao-email/',
+    '/liberar-espaco-disco/',
+    '/instalacao-programas/'
+]
 LANGUAGES = {
     'pt-BR': ('', 'br', 'Português', 'pt_BR'),
     'en': ('/en', 'us', 'English', 'en_US'),
@@ -77,11 +88,16 @@ class Localize(HTMLParser):
             elif key in ('href','src'):
                 if key=='href':val='#content' if val.endswith('#content') else rewrite_url(val,self.lang)
                 if self.lang!='pt-BR' and 'api.whatsapp.com/send' in val:
-                    message={
-                        'en': ['Hello! I would like a quote for your services.', 'Hello! I need remote IT support.', 'Hello! I need IT support for my law firm, PJe or a digital certificate.'],
-                        'es': ['¡Hola! Quisiera un presupuesto para sus servicios.', '¡Hola! Necesito soporte remoto de TI.', '¡Hola! Necesito soporte para mi despacho, el PJe o un certificado digital.'],
-                        'ar': ['مرحباً! أود طلب عرض سعر لخدماتكم.', 'مرحباً! أحتاج إلى دعم تقني عن بُعد.', 'مرحباً! أحتاج إلى دعم لمكتب المحاماة أو PJe أو شهادة رقمية.']
-                    }[self.lang][PATHS.index(self.path)]
+                    msgs = {'en':'Hello! I need IT support.','es':'¡Hola! Necesito soporte técnico de TI.','ar':'مرحباً! أحتاج إلى دعم تقني.'}
+                    path_idx = PATHS.index(self.path) if self.path in PATHS else 0
+                    if path_idx < 4:
+                        message = {
+                            'en': ['Hello! I would like a quote for your services.', 'Hello! I need remote IT support.', 'Hello! I need IT support for my law firm, PJe or a digital certificate.', 'Hello! I would like to check service availability for my neighborhood.'],
+                            'es': ['¡Hola! Quisiera un presupuesto para sus servicios.', '¡Hola! Necesito soporte remoto de TI.', '¡Hola! Necesito soporte para mi despacho, el PJe o un certificado digital.', '¡Hola! Quisiera consultar la disponibilidad de atención para mi barrio.'],
+                            'ar': ['مرحباً! أود طلب عرض سعر لخدماتكم.', 'مرحباً! أحتاج إلى دعم تقني عن بُعد.', 'مرحباً! أحتاج إلى دعم لمكتب المحاماة أو PJe أو شهادة رقمية.', 'مرحباً! أود الاستفسار عن توفر الخدمة في حيي.']
+                        }[self.lang][path_idx]
+                    else:
+                        message = msgs[self.lang]
                     val='https://api.whatsapp.com/send?'+urlencode({'phone':'5531991133939','text':message})
             elif key in ('alt','title','aria-label','data-open-text','data-collapse-text','data-close-locale','data-reply-by-locale','data-only-rating-locale'):val=translate(val,self.lang)
             elif key=='content' and tag=='meta':
@@ -116,21 +132,24 @@ def selector(lang,path):
     options=[]
     for code,(_,image,label,_) in LANGUAGES.items():
         current=' aria-current="true"' if code==lang else ''
-        options.append(f'<li><a href="{localized(path,code)}" lang="{code}" hreflang="{code}" aria-label="{label}"{current}><img src="/assets/flags/{image}.png" alt="" width="24" height="16"><span dir="auto">{label}</span></a></li>')
-    return '<div class="language-bar"><div class="container"><details class="language-switcher"><summary aria-label="'+caption+'"><img src="/assets/flags/'+flag+'.png" alt="" width="24" height="16"><span dir="auto">'+name+'</span><span class="language-chevron" aria-hidden="true">⌄</span></summary><ul aria-label="'+caption+'">'+''.join(options)+'</ul></details></div></div>'
+        options.append(f'<li><a href="{localized(path,code)}" lang="{code}" hreflang="{code}" aria-label="{label}"{current}><img src="/assets/flags/{image}.png" alt="" width="22" height="15"><span dir="auto">{label}</span></a></li>')
+    return f'<li class="mega-menu-item mega-menu-item-type-custom mega-lang-nav-item" id="mega-menu-item-lang"><details class="language-switcher"><summary class="mega-lang-summary" aria-label="{caption}"><img src="/assets/flags/{flag}.png" alt="{name}" width="22" height="15"><i class="fas fa-chevron-down language-chevron" aria-hidden="true"></i></summary><ul class="language-dropdown" aria-label="{caption}">{"".join(options)}</ul></details></li>'
 
 pages={path:page_file(path).read_text(encoding='utf-8') for path in PATHS}
 for path,page in pages.items():
     # Idempotent: always translate Portuguese originals, never a previously translated page.
     page=re.sub(r'<div class="language-bar">.*?</details></div></div>','',page,flags=re.S)
-    page=re.sub(r'<link[^>]+(?:hreflang=|href="/assets/languages.css")[^>]*>','',page)
+    page=re.sub(r'<li[^>]*id="mega-menu-item-lang"[^>]*>.*?</li>','',page,flags=re.S)
+    # Remove any leftover leaked dropdown chunks if present
+    page=re.sub(r'(?:<li><a href="[^"]*" lang="(?:en|es|ar)"[^>]*>.*?</li></ul></details></li>)+','',page,flags=re.S)
+    page=re.sub(r'<link[^>]+(?:hreflang=|href="/assets/languages.css(?:\?v=[^"]*)?")[^>]*>','',page)
     for lang in LANGUAGES:
         parser=Localize(lang,path);parser.feed(page);parser.close()
         result=''.join(parser.output)
         alternates=''.join(f'<link rel="alternate" hreflang="{code}" href="{ORIGIN}{localized(path,code)}">' for code in LANGUAGES)
         alternates+=f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{path}">'
-        result=result.replace('</head>',alternates+'<link rel="stylesheet" href="/assets/languages.css"></head>',1)
-        result=re.sub(r'(<header\b[^>]*>)',lambda m:m.group(1)+selector(lang,path),result,count=1)
+        result=result.replace('</head>',alternates+'<link rel="stylesheet" href="/assets/languages.css?v=7"></head>',1)
+        result=re.sub(r'(<li[^>]*id="mega-menu-item-97336"[^>]*>.*?</li>)', r'\1' + selector(lang,path), result, flags=re.S)
         target=page_file(localized(path,lang));target.parent.mkdir(parents=True,exist_ok=True);target.write_text(result,encoding='utf-8')
 
 entries=[]
