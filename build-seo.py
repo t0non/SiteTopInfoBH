@@ -12,14 +12,16 @@ home = DIST / 'index.html'
 source = home.read_text(encoding='utf-8')
 if '<h1' not in source:
     source = source.replace('<p>Instalação de Câmeras, Alarmes.</p><p>Manutenção de Notebook e Computadores.</p>', '<h1 style="font:inherit;color:inherit;line-height:inherit;margin:0"><span style="display:block;margin-bottom:20px">Instalação de Câmeras, Alarmes.</span><span style="display:block;margin-bottom:20px">Manutenção de Notebook e Computadores.</span></h1>', 1)
-lawyer_item = '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-lawyers"><a class="mega-menu-link" href="/suporte-para-advogados/">Advogados</a></li>'
 coverage_item = '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-coverage"><a class="mega-menu-link" href="/onde-atendemos/">Onde atendemos</a></li>'
-if 'id="mega-menu-item-lawyers"' not in source:
-    source = source.replace('<li class="mega-call-phone', lawyer_item + '<li class="mega-call-phone', 1)
 if 'id="mega-menu-item-coverage"' not in source:
     source = source.replace('<li class="mega-call-phone', coverage_item + '<li class="mega-call-phone', 1)
+# Clean up obsolete nav items: remove Avaliações (97334) and Sobre (97573)
+source = re.sub(r'<li[^>]*id="mega-menu-item-97334"[^>]*>.*?</li>', '', source, flags=re.S)
+source = re.sub(r'<li[^>]*id="mega-menu-item-97573"[^>]*>.*?</li>', '', source, flags=re.S)
+# Remove old standalone lawyers item if it was inserted before the dropdown was added
+if 'id="mega-menu-item-lawyers"' in source and 'id="mega-menu-item-lawyers-sub"' not in source:
+    source = re.sub(r'<li[^>]*id="mega-menu-item-lawyers"[^>]*>.*?</li>', '', source, flags=re.S)
 source = source.replace('href="#cameras">Instalação de Câmeras</a>', 'href="#cameras">Câmeras</a>').replace('href="#manutencao">Manutenção Computadores</a>', 'href="#manutencao">Computadores</a>')
-source = source.replace('<a class="mega-menu-link" href="#depoimentos">Depoimentos</a>', '<a class="mega-menu-link" href="#depoimentos">Avaliações</a>')
 home.write_text(source, encoding='utf-8')
 subprocess.run([sys.executable, str(ROOT / 'build-remote.py')], check=True)
 

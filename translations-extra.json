@@ -1,24 +1,132 @@
 {
-  "Abrir menu de navegação": ["Open navigation menu", "Abrir menú de navegación", "افتح قائمة التنقل"],
-  "Assistência de informática em Belo Horizonte: computadores, notebooks, suporte remoto de TI e instalação de câmeras. Fale com a Top Info BH.": ["Computer services in Belo Horizonte: desktops, laptops, remote IT support and camera installation. Contact Top Info BH.", "Asistencia informática en Belo Horizonte: computadoras, portátiles, soporte remoto e instalación de cámaras. Contacta con Top Info BH.", "خدمات الكمبيوتر في بيلو هوريزونتي: أجهزة الكمبيوتر والمحمولة والدعم التقني عن بُعد وتركيب الكاميرات. تواصل مع Top Info BH."],
-  "Suporte remoto de TI em Belo Horizonte para computador lento, falta de espaço, impressoras, e-mail e programas. Peça seu orçamento à Top Info BH.": ["Remote IT support in Belo Horizonte for slow computers, low storage, printers, email and software. Request a quote from Top Info BH.", "Soporte remoto de TI en Belo Horizonte para computadoras lentas, falta de espacio, impresoras, correo y programas. Pide tu presupuesto a Top Info BH.", "دعم تقني عن بُعد في بيلو هوريزونتي لبطء الكمبيوتر ونفاد التخزين والطابعات والبريد والبرامج. اطلب عرض سعر من Top Info BH."],
-  "Suporte técnico para advogados em Belo Horizonte: PJe, PJeOffice, certificado digital, token e configuração do computador. Atendimento remoto com orçamento.": ["IT support for lawyers in Belo Horizonte: PJe, PJeOffice, digital certificates, tokens and computer setup. Remote service with a quote.", "Soporte técnico para abogados en Belo Horizonte: PJe, PJeOffice, certificados digitales, tokens y configuración. Atención remota con presupuesto.", "دعم تقني للمحامين في بيلو هوريزونتي: PJe وPJeOffice والشهادات الرقمية وأجهزة التوقيع وإعداد الكمبيوتر. خدمة عن بُعد بعرض سعر."],
-  "Suporte remoto de TI em Belo Horizonte": ["Remote IT support in Belo Horizonte", "Soporte remoto de TI en Belo Horizonte", "الدعم التقني عن بُعد في بيلو هوريزونتي"],
-  "Suporte de TI para advogados em Belo Horizonte": ["IT support for lawyers in Belo Horizonte", "Soporte de TI para abogados en Belo Horizonte", "دعم تقني للمحامين في بيلو هوريزونتي"],
-  "Top Info BH — informática em Belo Horizonte": ["Top Info BH — computer services in Belo Horizonte", "Top Info BH — informática en Belo Horizonte", "Top Info BH — خدمات الكمبيوتر في بيلو هوريزونتي"],
-  "Computador e serviços de manutenção da Top Info BH": ["Computer and repair services at Top Info BH", "Computadora y servicios de mantenimiento de Top Info BH", "كمبيوتر وخدمات الصيانة لدى Top Info BH"],
-  "Ilustração de suporte técnico para advocacia": ["Illustration of IT support for legal professionals", "Ilustración de soporte técnico para la abogacía", "رسم توضيحي للدعم التقني للمحامين"],
-  "Ilustração de um computador com os serviços de suporte remoto": ["Illustration of a computer showing remote support services", "Ilustración de una computadora con servicios de soporte remoto", "رسم توضيحي لكمبيوتر يعرض خدمات الدعم عن بُعد"],
-  "Solicitar suporte remoto pelo WhatsApp": ["Request remote support on WhatsApp", "Solicitar soporte remoto por WhatsApp", "اطلب الدعم عن بُعد عبر WhatsApp"],
-  "Converse Conosco": ["Chat with us", "Habla con nosotros", "تحدث معنا"],
-  "Você está em": ["You are here", "Estás aquí", "أنت هنا"],
-  "Serviços de informática": ["Computer services", "Servicios informáticos", "خدمات الكمبيوتر"],
-  "Próxima avaliação": ["Next review", "Siguiente reseña", "التقييم التالي"],
-  "Avaliação anterior": ["Previous review", "Reseña anterior", "التقييم السابق"],
-  "Esconder": ["Show less", "Mostrar menos", "عرض أقل"],
-  "Fechar": ["Close", "Cerrar", "إغلاق"],
-  "suporte técnico": ["technical support", "soporte técnico", "الدعم التقني"],
-  "Este usuário deixou apenas uma avaliação.": ["This user left a rating only.", "Este usuario solo dejó una valoración.", "ترك هذا المستخدم تقييماً فقط."],
-  "Leia mais": ["Read more", "Leer más", "اقرأ المزيد"],
-  "Fechar menu": ["Close menu", "Cerrar menú", "أغلق القائمة"]
+  "Abrir menu de navegação": [
+    "Open navigation menu",
+    "Abrir menú de navegación",
+    "افتح قائمة التنقل"
+  ],
+  "Assistência de informática em Belo Horizonte: computadores, notebooks, suporte remoto de TI e instalação de câmeras. Fale com a Top Info BH.": [
+    "Computer services in Belo Horizonte: desktops, laptops, remote IT support and camera installation. Contact Top Info BH.",
+    "Asistencia informática en Belo Horizonte: computadoras, portátiles, soporte remoto e instalación de cámaras. Contacta con Top Info BH.",
+    "خدمات الكمبيوتر في بيلو هوريزونتي: أجهزة الكمبيوتر والمحمولة والدعم التقني عن بُعد وتركيب الكاميرات. تواصل مع Top Info BH."
+  ],
+  "Suporte remoto de TI em Belo Horizonte para computador lento, falta de espaço, impressoras, e-mail e programas. Peça seu orçamento à Top Info BH.": [
+    "Remote IT support in Belo Horizonte for slow computers, low storage, printers, email and software. Request a quote from Top Info BH.",
+    "Soporte remoto de TI en Belo Horizonte para computadoras lentas, falta de espacio, impresoras, correo y programas. Pide tu presupuesto a Top Info BH.",
+    "دعم تقني عن بُعد في بيلو هوريزونتي لبطء الكمبيوتر ونفاد التخزين والطابعات والبريد والبرامج. اطلب عرض سعر من Top Info BH."
+  ],
+  "Suporte técnico para advogados em Belo Horizonte: PJe, PJeOffice, certificado digital, token e configuração do computador. Atendimento remoto com orçamento.": [
+    "IT support for lawyers in Belo Horizonte: PJe, PJeOffice, digital certificates, tokens and computer setup. Remote service with a quote.",
+    "Soporte técnico para abogados en Belo Horizonte: PJe, PJeOffice, certificados digitales, tokens y configuración. Atención remota con presupuesto.",
+    "دعم تقني للمحامين في بيلو هوريزونتي: PJe وPJeOffice والشهادات الرقمية وأجهزة التوقيع وإعداد الكمبيوتر. خدمة عن بُعد بعرض سعر."
+  ],
+  "Suporte remoto de TI em Belo Horizonte": [
+    "Remote IT support in Belo Horizonte",
+    "Soporte remoto de TI en Belo Horizonte",
+    "الدعم التقني عن بُعد في بيلو هوريزونتي"
+  ],
+  "Suporte de TI para advogados em Belo Horizonte": [
+    "IT support for lawyers in Belo Horizonte",
+    "Soporte de TI para abogados en Belo Horizonte",
+    "دعم تقني للمحامين في بيلو هوريزونتي"
+  ],
+  "Top Info BH — informática em Belo Horizonte": [
+    "Top Info BH — computer services in Belo Horizonte",
+    "Top Info BH — informática en Belo Horizonte",
+    "Top Info BH — خدمات الكمبيوتر في بيلو هوريزونتي"
+  ],
+  "Computador e serviços de manutenção da Top Info BH": [
+    "Computer and repair services at Top Info BH",
+    "Computadora y servicios de mantenimiento de Top Info BH",
+    "كمبيوتر وخدمات الصيانة لدى Top Info BH"
+  ],
+  "Ilustração de suporte técnico para advocacia": [
+    "Illustration of IT support for legal professionals",
+    "Ilustración de soporte técnico para la abogacía",
+    "رسم توضيحي للدعم التقني للمحامين"
+  ],
+  "Ilustração de um computador com os serviços de suporte remoto": [
+    "Illustration of a computer showing remote support services",
+    "Ilustración de una computadora con servicios de soporte remoto",
+    "رسم توضيحي لكمبيوتر يعرض خدمات الدعم عن بُعد"
+  ],
+  "Solicitar suporte remoto pelo WhatsApp": [
+    "Request remote support on WhatsApp",
+    "Solicitar soporte remoto por WhatsApp",
+    "اطلب الدعم عن بُعد عبر WhatsApp"
+  ],
+  "Converse Conosco": [
+    "Chat with us",
+    "Habla con nosotros",
+    "تحدث معنا"
+  ],
+  "Você está em": [
+    "You are here",
+    "Estás aquí",
+    "أنت هنا"
+  ],
+  "Serviços de informática": [
+    "Computer services",
+    "Servicios informáticos",
+    "خدمات الكمبيوتر"
+  ],
+  "Próxima avaliação": [
+    "Next review",
+    "Siguiente reseña",
+    "التقييم التالي"
+  ],
+  "Avaliação anterior": [
+    "Previous review",
+    "Reseña anterior",
+    "التقييم السابق"
+  ],
+  "Esconder": [
+    "Show less",
+    "Mostrar menos",
+    "عرض أقل"
+  ],
+  "Fechar": [
+    "Close",
+    "Cerrar",
+    "إغلاق"
+  ],
+  "suporte técnico": [
+    "technical support",
+    "soporte técnico",
+    "الدعم التقني"
+  ],
+  "Este usuário deixou apenas uma avaliação.": [
+    "This user left a rating only.",
+    "Este usuario solo dejó una valoración.",
+    "ترك هذا المستخدم تقييماً فقط."
+  ],
+  "Leia mais": [
+    "Read more",
+    "Leer más",
+    "اقرأ المزيد"
+  ],
+  "Fechar menu": [
+    "Close menu",
+    "Cerrar menú",
+    "أغلق القائمة"
+  ],
+  "Suporte": [
+    "Support",
+    "Soporte",
+    "الدعم"
+  ],
+  "Suporte remoto": [
+    "Remote support",
+    "Soporte remoto",
+    "الدعم عن بُعد"
+  ],
+  "Para advogados": [
+    "For lawyers",
+    "Para abogados",
+    "للمحامين"
+  ],
+  "Onde atendemos": [
+    "Where we serve",
+    "Dónde atendemos",
+    "أماكن خدمتنا"
+  ]
 }

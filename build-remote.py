@@ -5,7 +5,18 @@ import re, html
 root = Path(__file__).parent
 home = root / 'dist/index.html'
 source = home.read_text(encoding='utf-8')
-item = '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom remote-nav-extra" id="mega-menu-item-remote"><a class="mega-menu-link" href="/suporte-remoto/">Suporte remoto</a></li>'
+item = (
+    '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom'
+    ' mega-menu-item-has-children mega-menu-flyout remote-nav-extra" id="mega-menu-item-remote">'
+    '<a class="mega-menu-link" href="/suporte-remoto/">Suporte'
+    '<span class="mega-indicator"></span></a>'
+    '<ul class="mega-sub-menu">'
+    '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-remote-sub">'
+    '<a class="mega-menu-link" href="/suporte-remoto/">Suporte remoto</a></li>'
+    '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-lawyers-sub">'
+    '<a class="mega-menu-link" href="/suporte-para-advogados/">Para advogados</a></li>'
+    '</ul></li>'
+)
 if 'id="mega-menu-item-remote"' not in source:
     source = source.replace('<li class="mega-call-phone', item + '<li class="mega-call-phone', 1)
     home.write_text(source, encoding='utf-8')
