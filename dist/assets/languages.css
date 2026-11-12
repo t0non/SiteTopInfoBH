@@ -117,3 +117,35 @@ details[open] .mega-lang-summary .language-chevron{transform:rotate(180deg)}
 }
 
 .call-phone a::before, #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before { display: none !important; content: none !important; }
+
+/* Hero background video */
+.elementor-element.elementor-element-d4dccf4{
+  position: relative !important;
+  overflow: hidden !important;
+}
+.hero-bg-video{
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  transform: translate(-50%, -50%) !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+.elementor-element.elementor-element-d4dccf4 > .elementor-background-overlay{
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(27, 61, 102, 0.72) !important;
+  z-index: 1 !important;
+}
+.elementor-element.elementor-element-d4dccf4 > .elementor-container{
+  position: relative !important;
+  z-index: 2 !important;
+}
