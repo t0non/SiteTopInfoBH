@@ -24,21 +24,6 @@ if 'id="mega-menu-item-lawyers"' in source and 'id="mega-menu-item-lawyers-sub"'
 source = source.replace('href="#cameras">Instalação de Câmeras</a>', 'href="#cameras">Câmeras</a>').replace('href="#manutencao">Manutenção Computadores</a>', 'href="#manutencao">Computadores</a>')
 
 # Video embed in hero
-# Video background in hero section
-hero_bg_video_html = '''<video class="hero-bg-video" autoplay loop muted playsinline aria-hidden="true" style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);object-fit:cover;z-index:0;pointer-events:none;">
-<source src="/assets/video.mp4" type="video/mp4">
-</video>'''
-
-if 'hero-bg-video' not in source:
-    # Insert video right after <div class="elementor-background-overlay"></div> inside section d4dccf4
-    source = re.sub(
-        r'(<section[^>]*elementor-element-d4dccf4[^>]*>.*?<div class="elementor-background-overlay"></div>)',
-        lambda m: m.group(1) + '\n' + hero_bg_video_html,
-        source,
-        count=1,
-        flags=re.S
-    )
-
 home.write_text(source, encoding='utf-8')
 subprocess.run([sys.executable, str(ROOT / 'build-remote.py')], check=True)
 
