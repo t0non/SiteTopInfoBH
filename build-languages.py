@@ -148,7 +148,7 @@ for path,page in pages.items():
         result=''.join(parser.output)
         alternates=''.join(f'<link rel="alternate" hreflang="{code}" href="{ORIGIN}{localized(path,code)}">' for code in LANGUAGES)
         alternates+=f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{path}">'
-        result=result.replace('</head>',alternates+'<link rel="stylesheet" href="/assets/languages.css?v=9"></head>',1)
+        result=result.replace('</head>',alternates+'<link rel="stylesheet" href="/assets/languages.css?v=10"></head>',1)
         result=re.sub(r'(<li[^>]*id="mega-menu-item-97336"[^>]*>.*?</li>)', r'\1' + selector(lang,path), result, flags=re.S)
         target=page_file(localized(path,lang));target.parent.mkdir(parents=True,exist_ok=True);target.write_text(result,encoding='utf-8')
 

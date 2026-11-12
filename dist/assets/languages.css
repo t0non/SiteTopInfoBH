@@ -87,14 +87,23 @@ details[open] .mega-lang-summary .language-chevron{transform:rotate(180deg)}
   color:#1e4875;
 }
 /* Chevron indicator on the Suporte parent link */
+#mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link .mega-indicator,
+#mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link .mega-indicator::before{
+  display: inline-block !important;
+  font-family: inherit !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+}
 #mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link .mega-indicator::after{
-  content:"";
-  display:inline-block;
-  border:4px solid transparent;
-  border-top-color:currentColor;
-  margin-left:5px;
-  margin-bottom:-2px;
-  vertical-align:middle;
+  content: "\25BE" !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+  margin: 0 0 0 4px !important;
+  vertical-align: 1px !important;
+  border: none !important;
+  background: transparent !important;
 }
 @media(max-width:767px){
   #mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > ul.mega-sub-menu{
