@@ -43,7 +43,7 @@ page = '''<!doctype html>
 <title>Suporte Remoto e Help Desk de TI em Belo Horizonte | Top Info BH</title>
 <meta name="description" content="Suporte remoto de TI e Help Desk em Belo Horizonte para empresas e home office. Resolva lentidão, PJe, impressoras, rede e e-mails com início imediato. Peça seu orçamento!">
 <meta name="robots" content="index,follow"><link rel="icon" href="/assets/598fbf0a1188592a.png">
-''' + '\n'.join(styles) + '<style>' + custom + '</style><link rel="stylesheet" href="/assets/suporte-remoto.css?v=7"></head><body><a class="sr-only sr-only-focusable" href="#content">Ir para o conteúdo</a>' + header + content + footer + '''<a class="remote-float" href="https://api.whatsapp.com/send?phone=5531991133939&amp;text=Ol%C3%A1%21%20Preciso%20de%20suporte%20remoto%20de%20TI." target="_blank" rel="noopener noreferrer" aria-label="Solicitar suporte remoto pelo WhatsApp"><img src="/assets/3c88161b62504a20.png" alt="WhatsApp" width="60" height="60"></a>''' + '\n'.join(scripts) + '</body></html>'
+''' + '\n'.join(styles) + '<style>' + custom + '</style><link rel="stylesheet" href="/assets/suporte-remoto.css?v=8"></head><body><a class="sr-only sr-only-focusable" href="#content">Ir para o conteúdo</a>' + header + content + footer + '''<a class="remote-float" href="https://api.whatsapp.com/send?phone=5531991133939&amp;text=Ol%C3%A1%21%20Preciso%20de%20suporte%20remoto%20de%20TI." target="_blank" rel="noopener noreferrer" aria-label="Solicitar suporte remoto pelo WhatsApp"><img src="/assets/3c88161b62504a20.png" alt="WhatsApp" width="60" height="60"></a>''' + '\n'.join(scripts) + '</body></html>'
 out = root / 'dist/suporte-remoto'
 out.mkdir(exist_ok=True)
 (out / 'index.html').write_text(page, encoding='utf-8')

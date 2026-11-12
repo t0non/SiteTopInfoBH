@@ -2,10 +2,10 @@
 
 html[lang=ar] .site-content{direction:ltr}html[lang=ar] .site-content .elementor-widget-wrap{direction:rtl}html[lang=ar] .site-content .elementor-widget-text-editor{line-height:1.7!important}html[lang=ar] .elementor-97291 .elementor-element.elementor-element-3acd15a{font-size:36px;line-height:1.7}html[lang=ar] .elementor-97291 .elementor-element.elementor-element-3acd15a h1{font-family:Tahoma,Arial,sans-serif!important}@media(max-width:480px){html[lang=ar] .elementor-97291 .elementor-element.elementor-element-3acd15a{font-size:28px}html[lang=ar] #logo img{max-width:150px}}
 
-html[lang=pt-BR] .call-phone a::before{background-image:url('/assets/flags/br.png')!important}
-html[lang=en] .call-phone a::before{background-image:url('/assets/flags/us.png')!important}
-html[lang=es] .call-phone a::before{background-image:url('/assets/flags/es.png')!important}
-html[lang=ar] .call-phone a::before{background-image:url('/assets/flags/sa.png')!important}
+
+
+
+
 
 
 /* Language selector dropdown as nav item */
@@ -39,29 +39,11 @@ details[open] .mega-lang-summary .language-chevron{transform:rotate(180deg)}
   padding: 0 16px !important;
   vertical-align: middle !important;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-.call-phone a::before{
-  content: "" !important;
-  display: inline-block !important;
-  width: 20px !important;
-  height: 14px !important;
-  background-image: url('/assets/flags/br.png') !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  border-radius: 2px !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
-  flex-shrink: 0 !important;
-  margin: 0 !important;
-}
-html[lang=pt-BR] #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-html[lang=pt-BR] .call-phone a::before{background-image:url('/assets/flags/br.png')!important}
-html[lang=en] #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-html[lang=en] .call-phone a::before{background-image:url('/assets/flags/us.png')!important}
-html[lang=es] #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-html[lang=es] .call-phone a::before{background-image:url('/assets/flags/es.png')!important}
-html[lang=ar] #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-html[lang=ar] .call-phone a::before{background-image:url('/assets/flags/sa.png')!important}
+
+
+
+
+
 
 /* Suporte dropdown flyout nav */
 #mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link{position:relative}
@@ -124,3 +106,5 @@ html[lang=ar] .call-phone a::before{background-image:url('/assets/flags/sa.png')
     padding:0 0 0 14px;
   }
 }
+
+.call-phone a::before, #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before { display: none !important; content: none !important; }

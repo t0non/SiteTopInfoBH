@@ -10,7 +10,7 @@
 .remote h2:after,.remote h2:before{content:none!important;display:none!important}
 
 .call-phone a{display:inline-flex!important;align-items:center;gap:6px}
-.call-phone a::before{content:"";display:inline-block;width:18px;height:12px;background:url('/assets/flags/br.png') center/cover no-repeat;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,0.2);flex-shrink:0}
+
 .hero-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:25px}
 .remote-button-pulse{box-shadow:0 0 0 0 rgba(90,155,213,0.7);animation:pulse-remote 2s infinite}
 @keyframes pulse-remote{0%{box-shadow:0 0 0 0 rgba(90,155,213,0.7)}70%{box-shadow:0 0 0 14px rgba(90,155,213,0)}100%{box-shadow:0 0 0 0 rgba(90,155,213,0)}}
@@ -189,28 +189,12 @@ details[open] .mega-lang-summary .language-chevron{transform:rotate(180deg)}
   padding: 0 16px !important;
   vertical-align: middle !important;
 }
-#mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-.call-phone a::before{
-  content: "" !important;
-  display: inline-block !important;
-  width: 20px !important;
-  height: 14px !important;
-  background-image: url('/assets/flags/br.png') !important;
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  border-radius: 2px !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2) !important;
-  flex-shrink: 0 !important;
-  margin: 0 !important;
-}
-html[lang=pt-BR] #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-html[lang=pt-BR] .call-phone a::before{background-image:url('/assets/flags/br.png')!important}
-html[lang=en] #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-html[lang=en] .call-phone a::before{background-image:url('/assets/flags/us.png')!important}
-html[lang=es] #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-html[lang=es] .call-phone a::before{background-image:url('/assets/flags/es.png')!important}
-html[lang=ar] #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
-html[lang=ar] .call-phone a::before{background-image:url('/assets/flags/sa.png')!important}
+
+
+
+
+
 
 .service-icon-img{width:28px;height:28px;object-fit:contain;margin-bottom:22px;display:inline-block}
+
+.call-phone a::before, #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before { display: none !important; content: none !important; }
