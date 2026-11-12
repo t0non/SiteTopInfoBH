@@ -22,6 +22,31 @@ source = re.sub(r'<li[^>]*id="mega-menu-item-97573"[^>]*>.*?</li>', '', source, 
 if 'id="mega-menu-item-lawyers"' in source and 'id="mega-menu-item-lawyers-sub"' not in source:
     source = re.sub(r'<li[^>]*id="mega-menu-item-lawyers"[^>]*>.*?</li>', '', source, flags=re.S)
 source = source.replace('href="#cameras">Instalação de Câmeras</a>', 'href="#cameras">Câmeras</a>').replace('href="#manutencao">Manutenção Computadores</a>', 'href="#manutencao">Computadores</a>')
+
+# Video embed in hero
+hero_video_html = '''<div class="hero-video-wrapper" style="padding:15px;display:flex;align-items:center;justify-content:center;">
+<video autoplay loop muted playsinline controls style="max-width:100%;width:100%;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,0.28);border:2px solid rgba(255,255,255,0.2);display:block;background:#000;">
+<source src="/assets/video.mp4" type="video/mp4">
+Seu navegador não suporta vídeos HTML5.
+</video>
+</div>'''
+
+# Replace the empty elementor hero column with the video
+if 'hero-video-wrapper' not in source:
+    empty_col_target = '<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-02a6767 elementor-hidden-phone" data-id="02a6767" data-element_type="column" data-e-type="column">\n\t\t\t<div class="elementor-widget-wrap">\n\t\t\t\t\t\t\t</div>\n\t\t</div>'
+    new_col_replacement = f'<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-02a6767" data-id="02a6767" data-element_type="column" data-e-type="column" style="display:flex;align-items:center;justify-content:center;">\n\t\t\t<div class="elementor-widget-wrap" style="width:100%;">\n{hero_video_html}\n\t\t\t</div>\n\t\t</div>'
+    if empty_col_target in source:
+        source = source.replace(empty_col_target, new_col_replacement, 1)
+    else:
+        # Fallback regex match for empty column 02a6767
+        source = re.sub(
+            r'(<div[^>]*elementor-element-02a6767[^>]*>)\s*<div class="elementor-widget-wrap">\s*</div>\s*(</div>)',
+            lambda m: m.group(1).replace('elementor-hidden-phone', '') + f'<div class="elementor-widget-wrap" style="width:100%;">\n{hero_video_html}\n</div>' + m.group(2),
+            source,
+            count=1,
+            flags=re.S
+        )
+
 home.write_text(source, encoding='utf-8')
 subprocess.run([sys.executable, str(ROOT / 'build-remote.py')], check=True)
 
