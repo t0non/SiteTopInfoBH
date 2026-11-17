@@ -149,32 +149,6 @@ SERVICES = [
             ('Vocês instalam programas piratas?', 'Não. Trabalhamos exclusivamente com softwares homologados, gratuitos ou licenças adquiridas pelo cliente, garantindo a sua segurança jurídica e digital.'),
             ('Instalam pacote Office (Word, Excel)?', 'Configuramos sua conta Microsoft 365 ou instalamos alternativas gratuitas compatíveis como LibreOffice com perfeição.')
         ]
-    },
-    {
-        'slug': 'instalacao-pacote-office',
-        'nav_title': 'Instalação do Pacote Office',
-        'eyebrow': 'INSTALAÇÃO E CONFIGURAÇÃO DE PACOTE OFFICE EM BELO HORIZONTE',
-        'h1': 'Precisa instalar o Pacote Office no computador?<br><span>Instalamos Word, Excel, PowerPoint e Outlook na hora.</span>',
-        'desc': 'Instalação oficial e configuração completa do Pacote Office e Microsoft 365. Solução rápida para avisos de produto não licenciado, erros de ativação e e-mails no Outlook por suporte remoto seguro em BH.',
-        'icon': 'fas fa-file-word',
-        'whatsapp_msg': 'Olá! Preciso instalar e configurar o Pacote Office (Word, Excel, PowerPoint, Outlook) no meu computador. Podem me ajudar por suporte remoto?',
-        'cta_btn': 'INSTALAR PACOTE OFFICE NO MEU PC',
-        'problems': [
-            ('Aviso de "Produto Não Licenciado"', 'O Word e Excel abrem com faixa vermelha de aviso informando que o produto não está ativado, bloqueando a edição e salvamento de documentos.'),
-            ('Notebook ou Computador Novo Sem Office', 'Você comprou uma máquina nova ou acabou de formatar e precisa do Word, Excel, PowerPoint e Outlook prontos para trabalhar ou estudar.'),
-            ('Erros de Ativação e Atualizações Travadas', 'Mensagens de erro como "Não foi possível verificar a assinatura", falhas de login na conta Microsoft ou instalador que trava no meio.'),
-            ('Configuração do Outlook e E-mails', 'Configuração de contas corporativas e pessoais no Outlook, sincronização com OneDrive e importação de históricos de mensagens.'),
-            ('Planilhas e Documentos Travando ou Lentos', 'Arquivos pesados do Excel ou Word congelando ao abrir, suplementos corrompidos ou falhas de compatibilidade entre versões.'),
-            ('Instalação de Leitores de PDF e Softwares Essenciais', 'Além do Office, instalação e configuração de Adobe Acrobat PDF, WinRAR, antivírus, navegadores e programas essenciais para o dia a dia.')
-        ],
-        'how_it_works': 'Conectamos com segurança via AnyDesk ao seu computador, realizamos o download e a instalação limpa dos aplicativos oficiais, configuramos sua conta e ferramentas de produtividade e testamos o funcionamento do Word, Excel e Outlook na sua frente.',
-        'faqs': [
-            ('Vocês instalam o Pacote Office à distância?', 'Sim! Todo o processo é realizado por suporte remoto seguro. Você não precisa carregar o computador nem levar a lugar nenhum, e acompanha cada etapa na sua tela.'),
-            ('Quais programas vêm no Pacote Office?', 'Instalamos e configuramos os aplicativos essenciais da suíte: Microsoft Word, Excel, PowerPoint, Outlook, OneNote e utilitários complementares.'),
-            ('O que fazer se o meu Word ou Excel estiver com aviso de "Não Licenciado"?', 'Nossa equipe analisa a instalação, remove resquícios de versões antigas conflitantes e realiza a ativação e configuração correta da sua assinatura ou licença.'),
-            ('Vocês também instalam outros programas além do Office?', 'Com certeza! Instalamos leitores e editores de PDF, antivírus, compactadores (WinRAR/7-Zip), navegadores (Chrome, Edge), programas de emissão fiscal e ferramentas de escritório.'),
-            ('Quanto tempo demora o atendimento?', 'Geralmente entre 25 e 40 minutos, dependendo da velocidade da internet. Ao final, seus programas já ficam prontos e testados para uso imediato.')
-        ]
     }
 ]
 

@@ -13,8 +13,6 @@ item = (
     '<ul class="mega-sub-menu">'
     '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-remote-sub">'
     '<a class="mega-menu-link" href="/suporte-remoto/">Suporte remoto</a></li>'
-    '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-office-sub">'
-    '<a class="mega-menu-link" href="/instalacao-pacote-office/">Pacote Office</a></li>'
     '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-lawyers-sub">'
     '<a class="mega-menu-link" href="/suporte-para-advogados/">Para advogados</a></li>'
     '</ul></li>'
@@ -23,14 +21,12 @@ item = (
 if 'id="mega-menu-item-remote"' not in source:
     source = source.replace('<li class="mega-call-phone', item + '<li class="mega-call-phone', 1)
 else:
-    # Update existing remote item if office-sub is not in it
-    if 'id="mega-menu-item-office-sub"' not in source:
-        source = re.sub(
-            r'<li[^>]*id="mega-menu-item-remote"[^>]*>.*?</ul>\s*</li>',
-            item,
-            source,
-            flags=re.S
-        )
+    source = re.sub(
+        r'<li[^>]*id="mega-menu-item-remote"[^>]*>.*?</ul>\s*</li>',
+        item,
+        source,
+        flags=re.S
+    )
 home.write_text(source, encoding='utf-8')
 
 header = source[source.index('<header id="masthead"'):source.index('</header>') + len('</header>')]

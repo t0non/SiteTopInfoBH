@@ -18,8 +18,7 @@ PATHS = [
     '/computador-lento/',
     '/configuracao-email/',
     '/liberar-espaco-disco/',
-    '/instalacao-programas/',
-    '/instalacao-pacote-office/'
+    '/instalacao-programas/'
 ]
 LANGUAGES = {
     'pt-BR': ('', 'br', 'Português', 'pt_BR'),
