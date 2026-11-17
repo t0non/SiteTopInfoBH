@@ -87,12 +87,16 @@ details[open] .mega-lang-summary .language-chevron{transform:rotate(180deg)}
   color:#1e4875;
 }
 /* Chevron indicator on the Suporte parent link */
-#mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link .mega-indicator,
-#mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link .mega-indicator::before{
+/* Hide the default traco before, show only the chevron after */
+#mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link .mega-indicator{
   display: inline-block !important;
   font-family: inherit !important;
   line-height: 1 !important;
   padding: 0 !important;
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link .mega-indicator::before{
+  display: none !important;
+  content: none !important;
 }
 #mega-menu-wrap-primary #mega-menu-primary > li.remote-nav-extra > a.mega-menu-link .mega-indicator::after{
   content: "\25BE" !important;
@@ -116,5 +120,17 @@ details[open] .mega-lang-summary .language-chevron{transform:rotate(180deg)}
   }
 }
 
-.call-phone a::before, #mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before { display: none !important; content: none !important; }
+/* Remove flag/image from Orcamento button - comprehensive */
+#mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::before,
+#mega-menu-wrap-primary #mega-menu-primary > li.call-phone > a.mega-menu-link::after,
+li.call-phone a::before,
+li.call-phone a::after,
+.call-phone .mega-menu-link::before,
+.call-phone .mega-menu-link::after {
+  display: none !important;
+  content: none !important;
+  background-image: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
 
