@@ -8,11 +8,9 @@ source = home.read_text(encoding='utf-8')
 item = (
     '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom'
     ' mega-menu-item-has-children mega-menu-flyout remote-nav-extra" id="mega-menu-item-remote">'
-    '<a class="mega-menu-link" href="/suporte-remoto/">Suporte'
+    '<a class="mega-menu-link" href="/suporte-remoto/">Suporte remoto'
     '<span class="mega-indicator"></span></a>'
     '<ul class="mega-sub-menu">'
-    '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-remote-sub">'
-    '<a class="mega-menu-link" href="/suporte-remoto/">Suporte remoto</a></li>'
     '<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom" id="mega-menu-item-lawyers-sub">'
     '<a class="mega-menu-link" href="/suporte-para-advogados/">Para advogados</a></li>'
     '</ul></li>'
